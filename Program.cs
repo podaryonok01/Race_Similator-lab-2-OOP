@@ -1,22 +1,63 @@
 ﻿class Program {
 
     static int[] GetGroundTransports() {
+        bool isRead = true;
+        int[] validValues = { 1, 2, 3, 4 };
+        
         Console.WriteLine("  1 - Сапоги-скороходы");
         Console.WriteLine("  2 - Карета-тыква");
         Console.WriteLine("  3 - Избушка на курьих ножках");
         Console.WriteLine("  4 - Кентавр");
-        return Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        int[] res = {};
+        while(isRead){
+            List<int> notValid = new List<int>();
+            res = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            foreach(int item in res){
+                if(!validValues.Contains(item)){
+                    notValid.Add(item);
+                }
+            }
+            if(notValid.Count == 0){
+                isRead = false;
+            }else{
+                Console.WriteLine(
+                    "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
+                );
+            }
+        }
+        return res;
     }
 
     static int[] GetAirTransports() {
+        bool isRead = true;
+        int[] validValues = { 5, 6, 7, 8 };
         Console.WriteLine("  5 - Ступа Бабы Яги");
         Console.WriteLine("  6 - Метла");
         Console.WriteLine("  7 - Ковер-самолет");
         Console.WriteLine("  8 - Летучий корабль");
-        return Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        int[] res = {};
+        while(isRead){
+            List<int> notValid = new List<int>();
+            res = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            foreach(int item in res){
+                if(!validValues.Contains(item)){
+                    notValid.Add(item);
+                }
+            }
+            if(notValid.Count == 0){
+                isRead = false;
+            }else{
+                Console.WriteLine(
+                    "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
+                );
+            }
+        }
+        return res;
     }
 
     static int[] GetTransports() {
+        bool isRead = true;
+        int[] validValues = { 1, 2, 3, 4, 5, 6, 7, 8 };
         Console.WriteLine("  1 - Сапоги-скороходы");
         Console.WriteLine("  2 - Карета-тыква");
         Console.WriteLine("  3 - Избушка на курьих ножках");
@@ -25,7 +66,24 @@
         Console.WriteLine("  6 - Метла");
         Console.WriteLine("  7 - Ковер-самолет");
         Console.WriteLine("  8 - Летучий корабль");
-        return Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        int[] res = {};
+        while(isRead){
+            List<int> notValid = new List<int>();
+            res = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            foreach(int item in res){
+                if(!validValues.Contains(item)){
+                    notValid.Add(item);
+                }
+            }
+            if(notValid.Count == 0){
+                isRead = false;
+            }else{
+                Console.WriteLine(
+                    "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
+                );
+            }
+        }
+        return res;
     }
 
     static Transport CreateTransport(int idTr){
