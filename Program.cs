@@ -17,12 +17,18 @@
                     notValid.Add(item);
                 }
             }
-            if(notValid.Count == 0){
-                isRead = false;
-            }else{
+            if(notValid.Count > 0){
                 Console.WriteLine(
                     "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
                 );
+            }else{
+                if(res.ToList().Count < 2){
+                    Console.WriteLine(
+                        "В гонке должно участвовать минимум два транспортных средства! Введите заново:"
+                    );
+                }else{
+                    isRead = false;
+                }
             }
         }
         return res;
@@ -44,12 +50,18 @@
                     notValid.Add(item);
                 }
             }
-            if(notValid.Count == 0){
-                isRead = false;
-            }else{
+            if(notValid.Count > 0){
                 Console.WriteLine(
                     "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
                 );
+            }else{
+                if(res.ToList().Count < 2){
+                    Console.WriteLine(
+                        "В гонке должно участвовать минимум два транспортных средства! Введите заново:"
+                    );
+                }else{
+                    isRead = false;
+                }
             }
         }
         return res;
@@ -75,12 +87,18 @@
                     notValid.Add(item);
                 }
             }
-            if(notValid.Count == 0){
-                isRead = false;
-            }else{
+            if(notValid.Count > 0){
                 Console.WriteLine(
                     "Введенные значения не входят в допустимый диапазон(" + string.Join(", ", notValid) + "). Введите заново:"
                 );
+            }else{
+                if(res.ToList().Count < 2){
+                    Console.WriteLine(
+                        "В гонке должно участвовать минимум два транспортных средства! Введите заново:"
+                    );
+                }else{
+                    isRead = false;
+                }
             }
         }
         return res;
